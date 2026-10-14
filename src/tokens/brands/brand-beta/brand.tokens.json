@@ -1,0 +1,31 @@
+{
+  "brand": {
+    "name": { "$value": "Beta FinTech", "$type": "string" },
+    "fontFamily": {
+      "base": {
+        "$value": "'Plus Jakarta Sans', {primitive.fontFamily.sans}",
+        "$type": "fontFamily",
+        "$description": "Beta FinTech rounded humanist typography"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "default": {
+        "$value": "{primitive.radius.xl}",
+        "$description": "12px rounded radius"
+      },
+      "card": {
+        "$value": "{primitive.radius.2xl}",
+        "$description": "16px rounded card radius"
+      },
+      "button": {
+        "$value": "{primitive.radius.xl}",
+        "$description": "12px rounded button radius"
+      },
+      "input": {
+        "$value": "{primitive.radius.lg}",
+        "$description": "8px rounded input radius"
+      }
+    }
+  }
+}

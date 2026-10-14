@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en" data-brand="brand-alpha" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Tokens Explorer & Multi-Brand Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../dist/css/tokens.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-content">
+        <div class="header-title">
+          <div class="logo-mark">⚡</div>
+          <div>
+            <h1>Design Tokens Template</h1>
+            <p class="subtitle">
+              W3C DTCG • Multi-Brand Architecture • Style Dictionary v5
+            </p>
+          </div>
+        </div>
+
+        <!-- Controls Toolbar -->
+        <div class="controls-toolbar">
+          <div class="control-group">
+            <label for="brand-select">Brand</label>
+            <select id="brand-select" class="select-input">
+              <option value="brand-alpha">
+                Alpha Tech (Vibrant Blue • Crisp 6px)
+              </option>
+              <option value="brand-beta">
+                Beta FinTech (Emerald Luxe • Rounded 12px)
+              </option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="select-input">
+              <option value="light">☀️ Light</option>
+              <option value="dark">🌙 Dark</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- Architecture Banner -->
+      <section class="banner-card">
+        <div class="banner-content">
+          <span class="banner-badge">3-Tier Hierarchy</span>
+          <h2>Scalable Multi-Branding Architecture</h2>
+          <p>
+            This system separates concerns into
+            <strong>Primitives (Tier 1)</strong>,
+            <strong>Semantic Contexts (Tier 2)</strong>, and
+            <strong>Component Scopes (Tier 3)</strong>. Switching brands or dark
+            mode updates all tokens dynamically via pure CSS Custom Properties
+            with zero runtime overhead.
+          </p>
+        </div>
+        <div class="status-tags">
+          <div class="status-tag">
+            <span class="label">Current Brand:</span>
+            <strong id="current-brand-label">Alpha Tech</strong>
+          </div>
+          <div class="status-tag">
+            <span class="label">Current Theme:</span>
+            <strong id="current-theme-label">Light</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Component Showcase -->
+      <section class="section-container">
+        <div class="section-header">
+          <h2>1. Live Component Showcase</h2>
+          <p>
+            Styled exclusively with Tier 3 component tokens
+            (<code>--ds-button-*</code>, <code>--ds-input-*</code>,
+            <code>--ds-card-*</code>, <code>--ds-badge-*</code>).
+          </p>
+        </div>
+
+        <div class="demo-grid">
+          <!-- Button Card -->
+          <div class="showcase-card">
+            <h3>Buttons</h3>
+            <p class="card-desc">
+              Reacts to brand primary colors, typography, border radius, and
+              transitions.
+            </p>
+
+            <div class="component-row">
+              <button class="ds-button ds-button--primary ds-button--md">
+                Primary Action
+              </button>
+              <button class="ds-button ds-button--secondary ds-button--md">
+                Secondary Action
+              </button>
+              <button class="ds-button ds-button--ghost ds-button--md">
+                Ghost
+              </button>
+              <button class="ds-button ds-button--danger ds-button--md">
+                Danger
+              </button>
+            </div>
+
+            <div class="component-row">
+              <button class="ds-button ds-button--primary ds-button--sm">
+                Small (32px)
+              </button>
+              <button class="ds-button ds-button--primary ds-button--md">
+                Medium (40px)
+              </button>
+              <button class="ds-button ds-button--primary ds-button--lg">
+                Large (48px)
+              </button>
+            </div>
+          </div>
+
+          <!-- Input Card -->
+          <div class="showcase-card">
+            <h3>Form Controls</h3>
+            <p class="card-desc">
+              Focus rings, border states, placeholder colors, and disabled
+              states.
+            </p>
+
+            <div class="input-stack">
+              <div class="input-field">
+                <label class="input-label">Active Input</label>
+                <input
+                  type="text"
+                  class="ds-input"
+                  value="user@example.com"
+                  placeholder="Enter email address"
+                />
+              </div>
+              <div class="input-field">
+                <label class="input-label">Disabled Input</label>
+                <input
+                  type="text"
+                  class="ds-input"
+                  disabled
+                  value="System locked value"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Badges & Indicators Card -->
+          <div class="showcase-card">
+            <h3>Badges & Feedback</h3>
+            <p class="card-desc">
+              Semantic intent tokens mapping to feedback color surfaces and
+              text.
+            </p>
+
+            <div class="badges-row">
+              <span class="ds-badge ds-badge--neutral">Neutral</span>
+              <span class="ds-badge ds-badge--success">Success</span>
+              <span class="ds-badge ds-badge--warning">Warning</span>
+              <span class="ds-badge ds-badge--danger">Danger</span>
+              <span class="ds-badge ds-badge--info">Information</span>
+            </div>
+          </div>
+
+          <!-- Sub-Tree Multi-Branding Container -->
+          <div class="showcase-card">
+            <h3>Sub-Tree Multi-Branding</h3>
+            <p class="card-desc">
+              An isolated container locked to
+              <code>[data-brand="brand-beta"]</code> on the same page.
+            </p>
+
+            <div class="subtree-box" data-brand="brand-beta">
+              <span class="ds-badge ds-badge--success"
+                >Locked to Beta FinTech</span
+              >
+              <p>
+                This sub-tree demonstrates that you can embed multiple brands on
+                the same screen concurrently without style leakage!
+              </p>
+              <div class="component-row">
+                <button class="ds-button ds-button--primary ds-button--sm">
+                  Beta Button
+                </button>
+                <button class="ds-button ds-button--secondary ds-button--sm">
+                  Beta Outline
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Semantic Color Roles -->
+      <section class="section-container">
+        <div class="section-header">
+          <h2>2. Semantic Color Roles</h2>
+          <p>
+            Contextual tokens that automatically resolve to appropriate
+            primitive hues based on brand & theme.
+          </p>
+        </div>
+
+        <div class="swatch-grid" id="semantic-swatches">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- Typography Scale -->
+      <section class="section-container">
+        <div class="section-header">
+          <h2>3. Typography Scale</h2>
+          <p>Font size, line height, letter spacing, and weight tokens.</p>
+        </div>
+
+        <div class="typography-list">
+          <div class="type-row">
+            <span class="type-meta">heading-1 (2.25rem / 36px)</span>
+            <div
+              class="type-sample"
+              style="
+                font-size: var(--ds-typography-heading-1-fontSize);
+                font-weight: var(--ds-typography-heading-1-fontWeight);
+                line-height: var(--ds-typography-heading-1-lineHeight);
+                letter-spacing: var(--ds-typography-heading-1-letterSpacing);
+              "
+            >
+              The quick brown fox jumps over the lazy dog
+            </div>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">heading-2 (1.875rem / 30px)</span>
+            <div
+              class="type-sample"
+              style="
+                font-size: var(--ds-typography-heading-2-fontSize);
+                font-weight: var(--ds-typography-heading-2-fontWeight);
+                line-height: var(--ds-typography-heading-2-lineHeight);
+                letter-spacing: var(--ds-typography-heading-2-letterSpacing);
+              "
+            >
+              The quick brown fox jumps over the lazy dog
+            </div>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">heading-3 (1.5rem / 24px)</span>
+            <div
+              class="type-sample"
+              style="
+                font-size: var(--ds-typography-heading-3-fontSize);
+                font-weight: var(--ds-typography-heading-3-fontWeight);
+                line-height: var(--ds-typography-heading-3-lineHeight);
+              "
+            >
+              The quick brown fox jumps over the lazy dog
+            </div>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">body-large (1.125rem / 18px)</span>
+            <div
+              class="type-sample"
+              style="
+                font-size: var(--ds-typography-body-large-fontSize);
+                line-height: var(--ds-typography-body-large-lineHeight);
+              "
+            >
+              Design tokens are the single source of truth for design decisions
+              across platforms and tools.
+            </div>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">body-medium (1rem / 16px)</span>
+            <div
+              class="type-sample"
+              style="
+                font-size: var(--ds-typography-body-medium-fontSize);
+                line-height: var(--ds-typography-body-medium-lineHeight);
+              "
+            >
+              Design tokens are the single source of truth for design decisions
+              across platforms and tools.
+            </div>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">code (0.875rem / 14px monospace)</span>
+            <div
+              class="type-sample"
+              style="
+                font-size: var(--ds-typography-code-fontSize);
+                font-family: var(--ds-typography-code-fontFamily);
+                line-height: var(--ds-typography-code-lineHeight);
+              "
+            >
+              const token = TOKENS.color.surface.canvas; //
+              var(--ds-color-surface-canvas)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spatial Grid & Radii -->
+      <section class="section-container">
+        <div class="section-header">
+          <h2>4. Spacing, Elevation & Corner Radii</h2>
+          <p>Mathematical rhythm and elevation layers.</p>
+        </div>
+
+        <div class="scales-grid">
+          <div class="showcase-card">
+            <h3>Corner Radii Comparison</h3>
+            <div class="radii-demo">
+              <div
+                class="radii-box"
+                style="border-radius: var(--ds-brand-radius-card)"
+              >
+                <span
+                  >Card Radius: <code>var(--ds-brand-radius-card)</code></span
+                >
+              </div>
+              <div
+                class="radii-box"
+                style="border-radius: var(--ds-brand-radius-button)"
+              >
+                <span
+                  >Button Radius:
+                  <code>var(--ds-brand-radius-button)</code></span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <h3>Elevation Shadows</h3>
+            <div class="shadow-demo-row">
+              <div
+                class="shadow-box"
+                style="box-shadow: var(--ds-elevation-card)"
+              >
+                Card
+              </div>
+              <div
+                class="shadow-box"
+                style="box-shadow: var(--ds-elevation-dropdown)"
+              >
+                Dropdown
+              </div>
+              <div
+                class="shadow-box"
+                style="box-shadow: var(--ds-elevation-popover)"
+              >
+                Popover
+              </div>
+              <div
+                class="shadow-box"
+                style="box-shadow: var(--ds-elevation-modal)"
+              >
+                Modal
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

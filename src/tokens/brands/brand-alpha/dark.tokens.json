@@ -1,0 +1,136 @@
+{
+  "semantic": {
+    "color": {
+      "$type": "color",
+      "surface": {
+        "canvas": {
+          "$value": "{primitive.color.slate.950}",
+          "$description": "Page background (dark)"
+        },
+        "default": {
+          "$value": "{primitive.color.slate.900}",
+          "$description": "Card / container surface (dark)"
+        },
+        "subtle": {
+          "$value": "{primitive.color.slate.800}",
+          "$description": "Subtle surface (dark)"
+        },
+        "raised": {
+          "$value": "{primitive.color.slate.800}",
+          "$description": "Raised card surface (dark)"
+        },
+        "overlay": {
+          "$value": "rgba(0, 0, 0, 0.75)",
+          "$description": "Modal backdrop"
+        },
+        "sunken": {
+          "$value": "{primitive.color.slate.950}",
+          "$description": "Sunken surface (dark)"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{primitive.color.slate.50}",
+          "$description": "Primary readable text (dark)"
+        },
+        "secondary": {
+          "$value": "{primitive.color.slate.400}",
+          "$description": "Secondary text (dark)"
+        },
+        "tertiary": {
+          "$value": "{primitive.color.slate.500}",
+          "$description": "Muted text (dark)"
+        },
+        "disabled": {
+          "$value": "{primitive.color.slate.600}",
+          "$description": "Disabled text (dark)"
+        },
+        "inverse": {
+          "$value": "{primitive.color.slate.900}",
+          "$description": "Inverse text"
+        },
+        "brand": {
+          "$value": "{primitive.color.blue.400}",
+          "$description": "Brand text (dark)"
+        },
+        "link": {
+          "$value": "{primitive.color.blue.400}",
+          "$description": "Hyperlink default"
+        },
+        "linkHover": {
+          "$value": "{primitive.color.blue.300}",
+          "$description": "Hyperlink hover"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "{primitive.color.slate.800}",
+          "$description": "Default border"
+        },
+        "subtle": {
+          "$value": "{primitive.color.slate.900}",
+          "$description": "Faint dividers"
+        },
+        "strong": {
+          "$value": "{primitive.color.slate.700}",
+          "$description": "Emphasized borders"
+        },
+        "focus": {
+          "$value": "{primitive.color.blue.400}",
+          "$description": "Focus ring indicator"
+        },
+        "disabled": {
+          "$value": "{primitive.color.slate.800}",
+          "$description": "Disabled border"
+        }
+      },
+      "interactive": {
+        "primary": {
+          "default": { "$value": "{primitive.color.blue.500}" },
+          "hover": { "$value": "{primitive.color.blue.400}" },
+          "active": { "$value": "{primitive.color.blue.600}" },
+          "text": { "$value": "{primitive.color.white}" }
+        },
+        "secondary": {
+          "default": { "$value": "{primitive.color.slate.800}" },
+          "hover": { "$value": "{primitive.color.slate.700}" },
+          "active": { "$value": "{primitive.color.slate.600}" },
+          "text": { "$value": "{primitive.color.slate.100}" },
+          "border": { "$value": "{primitive.color.slate.700}" }
+        },
+        "ghost": {
+          "hover": { "$value": "{primitive.color.slate.800}" },
+          "text": { "$value": "{primitive.color.slate.200}" }
+        },
+        "danger": {
+          "default": { "$value": "{primitive.color.rose.500}" },
+          "hover": { "$value": "{primitive.color.rose.400}" },
+          "active": { "$value": "{primitive.color.rose.600}" },
+          "text": { "$value": "{primitive.color.white}" }
+        }
+      },
+      "feedback": {
+        "success": {
+          "surface": { "$value": "{primitive.color.emerald.950}" },
+          "border": { "$value": "{primitive.color.emerald.800}" },
+          "text": { "$value": "{primitive.color.emerald.300}" }
+        },
+        "warning": {
+          "surface": { "$value": "{primitive.color.amber.950}" },
+          "border": { "$value": "{primitive.color.amber.800}" },
+          "text": { "$value": "{primitive.color.amber.300}" }
+        },
+        "danger": {
+          "surface": { "$value": "{primitive.color.rose.950}" },
+          "border": { "$value": "{primitive.color.rose.800}" },
+          "text": { "$value": "{primitive.color.rose.300}" }
+        },
+        "info": {
+          "surface": { "$value": "{primitive.color.blue.950}" },
+          "border": { "$value": "{primitive.color.blue.800}" },
+          "text": { "$value": "{primitive.color.blue.300}" }
+        }
+      }
+    }
+  }
+}

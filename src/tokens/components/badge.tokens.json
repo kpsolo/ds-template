@@ -1,0 +1,90 @@
+{
+  "component": {
+    "badge": {
+      "radius": { "$value": "{primitive.radius.full}", "$type": "dimension" },
+      "borderWidth": {
+        "$value": "{primitive.borderWidth.thin}",
+        "$type": "dimension"
+      },
+      "fontSize": { "$value": "{primitive.fontSize.xs}", "$type": "dimension" },
+      "fontWeight": {
+        "$value": "{primitive.fontWeight.medium}",
+        "$type": "fontWeight"
+      },
+      "paddingX": { "$value": "{primitive.spacing.2-5}", "$type": "dimension" },
+      "paddingY": { "$value": "{primitive.spacing.0-5}", "$type": "dimension" },
+      "variant": {
+        "neutral": {
+          "bg": {
+            "$value": "{semantic.color.surface.subtle}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{semantic.color.border.default}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{semantic.color.text.secondary}",
+            "$type": "color"
+          }
+        },
+        "success": {
+          "bg": {
+            "$value": "{semantic.color.feedback.success.surface}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{semantic.color.feedback.success.border}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{semantic.color.feedback.success.text}",
+            "$type": "color"
+          }
+        },
+        "warning": {
+          "bg": {
+            "$value": "{semantic.color.feedback.warning.surface}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{semantic.color.feedback.warning.border}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{semantic.color.feedback.warning.text}",
+            "$type": "color"
+          }
+        },
+        "danger": {
+          "bg": {
+            "$value": "{semantic.color.feedback.danger.surface}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{semantic.color.feedback.danger.border}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{semantic.color.feedback.danger.text}",
+            "$type": "color"
+          }
+        },
+        "info": {
+          "bg": {
+            "$value": "{semantic.color.feedback.info.surface}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{semantic.color.feedback.info.border}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{semantic.color.feedback.info.text}",
+            "$type": "color"
+          }
+        }
+      }
+    }
+  }
+}

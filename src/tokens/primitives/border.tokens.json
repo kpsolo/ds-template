@@ -1,0 +1,12 @@
+{
+  "primitive": {
+    "borderWidth": {
+      "$type": "dimension",
+      "none": { "$value": "0px" },
+      "thin": { "$value": "1px" },
+      "default": { "$value": "1.5px" },
+      "medium": { "$value": "2px" },
+      "thick": { "$value": "4px" }
+    }
+  }
+}

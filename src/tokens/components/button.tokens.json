@@ -1,0 +1,140 @@
+{
+  "component": {
+    "button": {
+      "radius": { "$value": "{brand.radius.button}", "$type": "dimension" },
+      "borderWidth": {
+        "$value": "{primitive.borderWidth.thin}",
+        "$type": "dimension"
+      },
+      "fontFamily": {
+        "$value": "{brand.fontFamily.base}",
+        "$type": "fontFamily"
+      },
+      "fontWeight": {
+        "$value": "{primitive.fontWeight.semibold}",
+        "$type": "fontWeight"
+      },
+      "transition": {
+        "$value": "all {primitive.motion.duration.fast} {primitive.motion.easing.easeOut}",
+        "$type": "string"
+      },
+      "size": {
+        "sm": {
+          "height": { "$value": "32px", "$type": "dimension" },
+          "paddingX": {
+            "$value": "{primitive.spacing.3}",
+            "$type": "dimension"
+          },
+          "fontSize": {
+            "$value": "{primitive.fontSize.xs}",
+            "$type": "dimension"
+          }
+        },
+        "md": {
+          "height": { "$value": "40px", "$type": "dimension" },
+          "paddingX": {
+            "$value": "{primitive.spacing.4}",
+            "$type": "dimension"
+          },
+          "fontSize": {
+            "$value": "{primitive.fontSize.sm}",
+            "$type": "dimension"
+          }
+        },
+        "lg": {
+          "height": { "$value": "48px", "$type": "dimension" },
+          "paddingX": {
+            "$value": "{primitive.spacing.6}",
+            "$type": "dimension"
+          },
+          "fontSize": {
+            "$value": "{primitive.fontSize.base}",
+            "$type": "dimension"
+          }
+        }
+      },
+      "variant": {
+        "primary": {
+          "bg": {
+            "default": {
+              "$value": "{semantic.color.interactive.primary.default}",
+              "$type": "color"
+            },
+            "hover": {
+              "$value": "{semantic.color.interactive.primary.hover}",
+              "$type": "color"
+            },
+            "active": {
+              "$value": "{semantic.color.interactive.primary.active}",
+              "$type": "color"
+            }
+          },
+          "text": {
+            "$value": "{semantic.color.interactive.primary.text}",
+            "$type": "color"
+          },
+          "border": { "$value": "transparent", "$type": "color" }
+        },
+        "secondary": {
+          "bg": {
+            "default": {
+              "$value": "{semantic.color.interactive.secondary.default}",
+              "$type": "color"
+            },
+            "hover": {
+              "$value": "{semantic.color.interactive.secondary.hover}",
+              "$type": "color"
+            },
+            "active": {
+              "$value": "{semantic.color.interactive.secondary.active}",
+              "$type": "color"
+            }
+          },
+          "text": {
+            "$value": "{semantic.color.interactive.secondary.text}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{semantic.color.interactive.secondary.border}",
+            "$type": "color"
+          }
+        },
+        "ghost": {
+          "bg": {
+            "default": { "$value": "transparent", "$type": "color" },
+            "hover": {
+              "$value": "{semantic.color.interactive.ghost.hover}",
+              "$type": "color"
+            }
+          },
+          "text": {
+            "$value": "{semantic.color.interactive.ghost.text}",
+            "$type": "color"
+          },
+          "border": { "$value": "transparent", "$type": "color" }
+        },
+        "danger": {
+          "bg": {
+            "default": {
+              "$value": "{semantic.color.interactive.danger.default}",
+              "$type": "color"
+            },
+            "hover": {
+              "$value": "{semantic.color.interactive.danger.hover}",
+              "$type": "color"
+            },
+            "active": {
+              "$value": "{semantic.color.interactive.danger.active}",
+              "$type": "color"
+            }
+          },
+          "text": {
+            "$value": "{semantic.color.interactive.danger.text}",
+            "$type": "color"
+          },
+          "border": { "$value": "transparent", "$type": "color" }
+        }
+      }
+    }
+  }
+}

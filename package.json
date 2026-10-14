@@ -1,0 +1,49 @@
+{
+  "name": "@ds-template/tokens",
+  "version": "1.0.0",
+  "description": "Multi-brand, DTCG-compliant design token system powered by Style Dictionary",
+  "type": "module",
+  "main": "./dist/ts/index.js",
+  "types": "./dist/ts/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/ts/index.d.ts",
+      "import": "./dist/ts/index.js"
+    },
+    "./css": "./dist/css/tokens.css",
+    "./css/*": "./dist/css/*.css",
+    "./scss": "./dist/scss/_index.scss",
+    "./scss/*": "./dist/scss/*.scss",
+    "./figma/tokens-studio": "./dist/figma/tokens-studio.json",
+    "./figma/variables": "./dist/figma/figma-variables.json"
+  },
+  "files": [
+    "dist",
+    "src/tokens"
+  ],
+  "scripts": {
+    "build": "node scripts/build-tokens.mjs",
+    "validate": "node scripts/validate-tokens.mjs",
+    "dev": "vite src/preview",
+    "preview": "vite preview src/preview",
+    "format": "prettier --write \"src/**/*.{json,ts,css,html}\" \"scripts/**/*.mjs\"",
+    "clean": "node -e \"import('fs').then(fs => fs.promises.rm('dist', { recursive: true, force: true }))\""
+  },
+  "keywords": [
+    "design-tokens",
+    "dtcg",
+    "style-dictionary",
+    "multibranding",
+    "theming",
+    "design-system",
+    "css-custom-properties",
+    "figma-tokens"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "style-dictionary": "^5.6.1",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0"
+  }
+}

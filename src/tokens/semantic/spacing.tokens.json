@@ -1,0 +1,57 @@
+{
+  "semantic": {
+    "spacing": {
+      "$type": "dimension",
+      "layout": {
+        "pagePadding": {
+          "$value": "{primitive.spacing.6}",
+          "$description": "Default outer padding of the page viewport"
+        },
+        "sectionGap": {
+          "$value": "{primitive.spacing.12}",
+          "$description": "Gap between major sections"
+        },
+        "gutter": {
+          "$value": "{primitive.spacing.4}",
+          "$description": "Grid column gap"
+        }
+      },
+      "component": {
+        "xs": {
+          "$value": "{primitive.spacing.1}",
+          "$description": "Tight internal gap (4px)"
+        },
+        "sm": {
+          "$value": "{primitive.spacing.2}",
+          "$description": "Compact element padding/gap (8px)"
+        },
+        "md": {
+          "$value": "{primitive.spacing.4}",
+          "$description": "Standard component padding/gap (16px)"
+        },
+        "lg": {
+          "$value": "{primitive.spacing.6}",
+          "$description": "Spacious component padding/gap (24px)"
+        },
+        "xl": {
+          "$value": "{primitive.spacing.8}",
+          "$description": "Extra spacious container padding (32px)"
+        }
+      },
+      "inset": {
+        "squishSm": {
+          "$value": "{primitive.spacing.1-5} {primitive.spacing.3}",
+          "$description": "Squished inset (6px 12px)"
+        },
+        "squishMd": {
+          "$value": "{primitive.spacing.2-5} {primitive.spacing.4}",
+          "$description": "Squished inset (10px 16px)"
+        },
+        "squishLg": {
+          "$value": "{primitive.spacing.3} {primitive.spacing.6}",
+          "$description": "Squished inset (12px 24px)"
+        }
+      }
+    }
+  }
+}

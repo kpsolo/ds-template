@@ -1,0 +1,28 @@
+{
+  "semantic": {
+    "elevation": {
+      "$type": "shadow",
+      "flat": { "$value": "{primitive.shadow.none}" },
+      "card": {
+        "$value": "{primitive.shadow.sm}",
+        "$description": "Elevation for content cards"
+      },
+      "dropdown": {
+        "$value": "{primitive.shadow.md}",
+        "$description": "Elevation for select/autocomplete menus"
+      },
+      "popover": {
+        "$value": "{primitive.shadow.lg}",
+        "$description": "Elevation for contextual tooltips and popovers"
+      },
+      "modal": {
+        "$value": "{primitive.shadow.xl}",
+        "$description": "Elevation for modal dialogs and sheets"
+      },
+      "banner": {
+        "$value": "{primitive.shadow.md}",
+        "$description": "Elevation for floating headers and banners"
+      }
+    }
+  }
+}

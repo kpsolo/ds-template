@@ -1,0 +1,106 @@
+{
+  "semantic": {
+    "color": {
+      "$type": "color",
+      "surface": {
+        "canvas": {
+          "$value": "#0a120e",
+          "$description": "Deep forest page background"
+        },
+        "default": { "$value": "#111c17", "$description": "Container surface" },
+        "subtle": { "$value": "#182721", "$description": "Subtle surface" },
+        "raised": {
+          "$value": "#1e3029",
+          "$description": "Raised card surface"
+        },
+        "overlay": {
+          "$value": "rgba(0, 0, 0, 0.8)",
+          "$description": "Modal backdrop"
+        },
+        "sunken": { "$value": "#070c0a", "$description": "Sunken surface" }
+      },
+      "text": {
+        "primary": {
+          "$value": "#eef2ef",
+          "$description": "Primary readable text"
+        },
+        "secondary": { "$value": "#9db0a5", "$description": "Secondary text" },
+        "tertiary": { "$value": "#687c71", "$description": "Muted text" },
+        "disabled": { "$value": "#42524a", "$description": "Disabled text" },
+        "inverse": { "$value": "#111815", "$description": "Inverse text" },
+        "brand": {
+          "$value": "{primitive.color.emerald.400}",
+          "$description": "Brand text"
+        },
+        "link": {
+          "$value": "{primitive.color.emerald.400}",
+          "$description": "Hyperlink default"
+        },
+        "linkHover": {
+          "$value": "{primitive.color.emerald.300}",
+          "$description": "Hyperlink hover"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "#1f332a",
+          "$description": "Default container border"
+        },
+        "subtle": { "$value": "#16251e", "$description": "Faint divider" },
+        "strong": { "$value": "#345244", "$description": "Emphasized border" },
+        "focus": {
+          "$value": "{primitive.color.emerald.400}",
+          "$description": "Focus ring indicator"
+        },
+        "disabled": { "$value": "#1f332a", "$description": "Disabled border" }
+      },
+      "interactive": {
+        "primary": {
+          "default": { "$value": "{primitive.color.emerald.500}" },
+          "hover": { "$value": "{primitive.color.emerald.400}" },
+          "active": { "$value": "{primitive.color.emerald.600}" },
+          "text": { "$value": "#0a120e" }
+        },
+        "secondary": {
+          "default": { "$value": "#182721" },
+          "hover": { "$value": "#1e3029" },
+          "active": { "$value": "#273d34" },
+          "text": { "$value": "#eef2ef" },
+          "border": { "$value": "#345244" }
+        },
+        "ghost": {
+          "hover": { "$value": "#182721" },
+          "text": { "$value": "#9db0a5" }
+        },
+        "danger": {
+          "default": { "$value": "{primitive.color.rose.500}" },
+          "hover": { "$value": "{primitive.color.rose.400}" },
+          "active": { "$value": "{primitive.color.rose.600}" },
+          "text": { "$value": "{primitive.color.white}" }
+        }
+      },
+      "feedback": {
+        "success": {
+          "surface": { "$value": "{primitive.color.emerald.950}" },
+          "border": { "$value": "{primitive.color.emerald.800}" },
+          "text": { "$value": "{primitive.color.emerald.300}" }
+        },
+        "warning": {
+          "surface": { "$value": "{primitive.color.amber.950}" },
+          "border": { "$value": "{primitive.color.amber.800}" },
+          "text": { "$value": "{primitive.color.amber.300}" }
+        },
+        "danger": {
+          "surface": { "$value": "{primitive.color.rose.950}" },
+          "border": { "$value": "{primitive.color.rose.800}" },
+          "text": { "$value": "{primitive.color.rose.300}" }
+        },
+        "info": {
+          "surface": { "$value": "{primitive.color.blue.950}" },
+          "border": { "$value": "{primitive.color.blue.800}" },
+          "text": { "$value": "{primitive.color.blue.300}" }
+        }
+      }
+    }
+  }
+}

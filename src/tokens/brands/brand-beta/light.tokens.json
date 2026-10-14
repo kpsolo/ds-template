@@ -1,0 +1,118 @@
+{
+  "semantic": {
+    "color": {
+      "$type": "color",
+      "surface": {
+        "canvas": {
+          "$value": "#fafaf8",
+          "$description": "Warm ivory page background"
+        },
+        "default": {
+          "$value": "{primitive.color.white}",
+          "$description": "Card / container surface"
+        },
+        "subtle": { "$value": "#f3f4f1", "$description": "Subtle surface" },
+        "raised": {
+          "$value": "{primitive.color.white}",
+          "$description": "Raised card surface"
+        },
+        "overlay": {
+          "$value": "rgba(18, 32, 27, 0.45)",
+          "$description": "Modal backdrop"
+        },
+        "sunken": { "$value": "#eceee9", "$description": "Sunken surface" }
+      },
+      "text": {
+        "primary": {
+          "$value": "#111815",
+          "$description": "Deep slate/forest primary text"
+        },
+        "secondary": {
+          "$value": "#42524a",
+          "$description": "Muted slate text"
+        },
+        "tertiary": { "$value": "#72837a", "$description": "Placeholder text" },
+        "disabled": { "$value": "#a6b5ad", "$description": "Disabled text" },
+        "inverse": {
+          "$value": "{primitive.color.white}",
+          "$description": "Inverse text"
+        },
+        "brand": {
+          "$value": "{primitive.color.emerald.600}",
+          "$description": "Brand text"
+        },
+        "link": {
+          "$value": "{primitive.color.emerald.700}",
+          "$description": "Hyperlink default"
+        },
+        "linkHover": {
+          "$value": "{primitive.color.emerald.800}",
+          "$description": "Hyperlink hover"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "#e2e6df",
+          "$description": "Default container border"
+        },
+        "subtle": { "$value": "#edf0ea", "$description": "Faint divider" },
+        "strong": { "$value": "#b5bfb6", "$description": "Emphasized border" },
+        "focus": {
+          "$value": "{primitive.color.emerald.500}",
+          "$description": "Focus ring indicator"
+        },
+        "disabled": { "$value": "#e2e6df", "$description": "Disabled border" }
+      },
+      "interactive": {
+        "primary": {
+          "default": {
+            "$value": "{primitive.color.emerald.600}",
+            "$description": "Primary button fill"
+          },
+          "hover": { "$value": "{primitive.color.emerald.700}" },
+          "active": { "$value": "{primitive.color.emerald.800}" },
+          "text": { "$value": "{primitive.color.white}" }
+        },
+        "secondary": {
+          "default": { "$value": "{primitive.color.white}" },
+          "hover": { "$value": "#f3f4f1" },
+          "active": { "$value": "#e2e6df" },
+          "text": { "$value": "#111815" },
+          "border": { "$value": "#b5bfb6" }
+        },
+        "ghost": {
+          "hover": { "$value": "#f3f4f1" },
+          "text": { "$value": "#42524a" }
+        },
+        "danger": {
+          "default": { "$value": "{primitive.color.rose.600}" },
+          "hover": { "$value": "{primitive.color.rose.700}" },
+          "active": { "$value": "{primitive.color.rose.800}" },
+          "text": { "$value": "{primitive.color.white}" }
+        }
+      },
+      "feedback": {
+        "success": {
+          "surface": { "$value": "{primitive.color.emerald.50}" },
+          "border": { "$value": "{primitive.color.emerald.200}" },
+          "text": { "$value": "{primitive.color.emerald.800}" }
+        },
+        "warning": {
+          "surface": { "$value": "{primitive.color.amber.50}" },
+          "border": { "$value": "{primitive.color.amber.200}" },
+          "text": { "$value": "{primitive.color.amber.800}" }
+        },
+        "danger": {
+          "surface": { "$value": "{primitive.color.rose.50}" },
+          "border": { "$value": "{primitive.color.rose.200}" },
+          "text": { "$value": "{primitive.color.rose.800}" }
+        },
+        "info": {
+          "surface": { "$value": "{primitive.color.blue.50}" },
+          "border": { "$value": "{primitive.color.blue.200}" },
+          "text": { "$value": "{primitive.color.blue.800}" }
+        }
+      }
+    }
+  }
+}

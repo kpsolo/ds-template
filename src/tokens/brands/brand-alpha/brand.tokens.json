@@ -1,0 +1,31 @@
+{
+  "brand": {
+    "name": { "$value": "Alpha Tech", "$type": "string" },
+    "fontFamily": {
+      "base": {
+        "$value": "'Inter', {primitive.fontFamily.sans}",
+        "$type": "fontFamily",
+        "$description": "Alpha Tech geometric sans typography"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "default": {
+        "$value": "{primitive.radius.md}",
+        "$description": "6px crisp radius"
+      },
+      "card": {
+        "$value": "{primitive.radius.lg}",
+        "$description": "8px card radius"
+      },
+      "button": {
+        "$value": "{primitive.radius.md}",
+        "$description": "6px button radius"
+      },
+      "input": {
+        "$value": "{primitive.radius.md}",
+        "$description": "6px input radius"
+      }
+    }
+  }
+}

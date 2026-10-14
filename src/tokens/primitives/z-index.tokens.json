@@ -1,0 +1,18 @@
+{
+  "primitive": {
+    "zIndex": {
+      "$type": "number",
+      "hide": { "$value": -1 },
+      "auto": { "$value": 0 },
+      "base": { "$value": 1 },
+      "elevated": { "$value": 10 },
+      "dropdown": { "$value": 100 },
+      "sticky": { "$value": 200 },
+      "overlay": { "$value": 300 },
+      "modal": { "$value": 400 },
+      "popover": { "$value": 500 },
+      "toast": { "$value": 600 },
+      "tooltip": { "$value": 700 }
+    }
+  }
+}
