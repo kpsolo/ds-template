@@ -1,0 +1,6 @@
+{
+  "name": "TokenOps Studio — kpsolo/ds-template Audit & Workbench",
+  "description": "Interactive architecture audit, bug remediation patches, WCAG contrast matrix, and live multi-brand DTCG token compiler workbench for kpsolo/ds-template.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

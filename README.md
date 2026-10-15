@@ -154,11 +154,12 @@ Compiles CSS, SCSS, TypeScript, and Figma sync files:
 pnpm build
 ```
 
-### 4. Launch Interactive Showcase
-Starts the local development server with live brand & theme switchers:
+### 4. Launch Interactive TokenOps Studio & Workbench
+Starts the local Next.js development server hosting the **TokenOps Studio** audit workbench, WCAG contrast calculator, token explorer, and multi-brand sandbox:
 ```bash
 pnpm dev
 ```
+*(To launch the lightweight Vite token preview sandbox instead, run `pnpm run dev:tokens`)*
 
 ---
 

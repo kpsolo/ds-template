@@ -1,6 +1,10 @@
-node_modules
-dist
-.cache
-*.log
+node_modules/
+dist/
+.next/
+.cache/
+coverage/
 .DS_Store
-Thumbs.db
+*.log
+*.tsbuildinfo
+.env*
+!.env.example
