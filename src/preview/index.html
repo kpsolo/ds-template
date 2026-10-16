@@ -47,6 +47,15 @@
               <option value="dark">🌙 Dark</option>
             </select>
           </div>
+
+          <div class="control-group">
+            <label for="density-select">Density</label>
+            <select id="density-select" class="select-input">
+              <option value="compact">Compact</option>
+              <option value="default" selected>Default</option>
+              <option value="spacious">Spacious</option>
+            </select>
+          </div>
         </div>
       </div>
     </header>
@@ -61,8 +70,9 @@
             This system separates concerns into
             <strong>Primitives (Tier 1)</strong>,
             <strong>Semantic Contexts (Tier 2)</strong>, and
-            <strong>Component Scopes (Tier 3)</strong>. Switching brands or dark
-            mode updates all tokens dynamically via pure CSS Custom Properties
+            <strong>Component Scopes (Tier 3)</strong>. Switching brands, themes,
+            or density modes updates all tokens dynamically via pure CSS Custom
+            Properties (`@layer`, `color-scheme`, and `color-mix(in oklch, ...)`)
             with zero runtime overhead.
           </p>
         </div>
@@ -74,6 +84,10 @@
           <div class="status-tag">
             <span class="label">Current Theme:</span>
             <strong id="current-theme-label">Light</strong>
+          </div>
+          <div class="status-tag">
+            <span class="label">Current Density:</span>
+            <strong id="current-density-label">Default</strong>
           </div>
         </div>
       </section>

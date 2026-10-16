@@ -14,27 +14,45 @@
           "$description": "Raised card surface"
         },
         "overlay": {
-          "$value": "rgba(0, 0, 0, 0.8)",
+          "$value": "color-mix(in oklch, {primitive.color.black} 80%, transparent)",
           "$description": "Modal backdrop"
         },
-        "sunken": { "$value": "#070c0a", "$description": "Sunken surface" }
+        "sunken": { "$value": "#070c0a", "$description": "Sunken surface" },
+        "tint": {
+          "$value": "color-mix(in oklch, {primitive.color.emerald.400} 14%, #111c17)",
+          "$description": "Brand-tinted highlight surface (dark)"
+        }
       },
       "text": {
         "primary": {
           "$value": "#eef2ef",
-          "$description": "Primary readable text"
+          "$description": "Primary readable text (15.8:1 AAA)"
         },
-        "secondary": { "$value": "#9db0a5", "$description": "Secondary text" },
-        "tertiary": { "$value": "#687c71", "$description": "Muted text" },
+        "secondary": {
+          "$value": "#9db0a5",
+          "$description": "Secondary text (7.6:1 AAA)"
+        },
+        "tertiary": {
+          "$value": "#85998e",
+          "$description": "Accessible muted metadata text (5.54:1 AA)"
+        },
+        "muted": {
+          "$value": "#9db0a5",
+          "$description": "Accessible muted helper text (7.6:1 AAA)"
+        },
+        "placeholder": {
+          "$value": "#85998e",
+          "$description": "Accessible form input placeholder text (5.54:1 AA)"
+        },
         "disabled": { "$value": "#42524a", "$description": "Disabled text" },
         "inverse": { "$value": "#111815", "$description": "Inverse text" },
         "brand": {
           "$value": "{primitive.color.emerald.400}",
-          "$description": "Brand text"
+          "$description": "Brand text (8.9:1 AAA)"
         },
         "link": {
           "$value": "{primitive.color.emerald.400}",
-          "$description": "Hyperlink default"
+          "$description": "Hyperlink default (8.9:1 AAA)"
         },
         "linkHover": {
           "$value": "{primitive.color.emerald.300}",
@@ -51,6 +69,10 @@
         "focus": {
           "$value": "{primitive.color.emerald.400}",
           "$description": "Focus ring indicator"
+        },
+        "ring": {
+          "$value": "color-mix(in oklch, {primitive.color.emerald.400} 28%, transparent)",
+          "$description": "Soft ambient focus halo (dark)"
         },
         "disabled": { "$value": "#1f332a", "$description": "Disabled border" }
       },
@@ -73,9 +95,9 @@
           "text": { "$value": "#9db0a5" }
         },
         "danger": {
-          "default": { "$value": "{primitive.color.rose.500}" },
-          "hover": { "$value": "{primitive.color.rose.400}" },
-          "active": { "$value": "{primitive.color.rose.600}" },
+          "default": { "$value": "{primitive.color.rose.600}" },
+          "hover": { "$value": "{primitive.color.rose.500}" },
+          "active": { "$value": "{primitive.color.rose.700}" },
           "text": { "$value": "{primitive.color.white}" }
         }
       },

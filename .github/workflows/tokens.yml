@@ -29,11 +29,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Validate Token DTCG Syntax & References
+      - name: Validate Token DTCG Syntax, Cycles, $type & WCAG AA Contrast
         run: pnpm validate
 
-      - name: Build Design Tokens
+      - name: Build Design Tokens & Figma Sync Artifacts
         run: pnpm build
 
-      - name: Type-check TypeScript outputs
+      - name: Run Automated Smoke & Integration Tests
+        run: pnpm test
+
+      - name: Type-check TypeScript Outputs
         run: pnpm exec tsc --noEmit

@@ -20,30 +20,42 @@
           "$description": "Raised card surface"
         },
         "overlay": {
-          "$value": "rgba(15, 23, 42, 0.4)",
-          "$description": "Modal backdrop"
+          "$value": "color-mix(in oklch, {primitive.color.slate.900} 45%, transparent)",
+          "$description": "Modal backdrop with perceptual OKLCH alpha mixing"
         },
         "sunken": {
           "$value": "{primitive.color.slate.200}",
           "$description": "Sunken wells and code blocks"
+        },
+        "tint": {
+          "$value": "color-mix(in oklch, {primitive.color.blue.600} 10%, {primitive.color.white})",
+          "$description": "Brand-tinted highlight surface"
         }
       },
       "text": {
         "primary": {
           "$value": "{primitive.color.slate.900}",
-          "$description": "Primary readable text"
+          "$description": "Primary readable text (19.3:1 AAA)"
         },
         "secondary": {
           "$value": "{primitive.color.slate.600}",
-          "$description": "Secondary / subtitle text"
+          "$description": "Secondary / subtitle text (7.58:1 AAA)"
         },
         "tertiary": {
-          "$value": "{primitive.color.slate.400}",
-          "$description": "Muted / placeholder text"
+          "$value": "{primitive.color.slate.500}",
+          "$description": "Muted metadata and captions (4.76:1 AA)"
+        },
+        "muted": {
+          "$value": "{primitive.color.slate.600}",
+          "$description": "High-contrast muted helper text (7.58:1 AAA)"
+        },
+        "placeholder": {
+          "$value": "{primitive.color.slate.500}",
+          "$description": "Accessible form input placeholder text (4.76:1 AA)"
         },
         "disabled": {
           "$value": "{primitive.color.slate.300}",
-          "$description": "Disabled text"
+          "$description": "Disabled text (exempt under WCAG 1.4.3)"
         },
         "inverse": {
           "$value": "{primitive.color.white}",
@@ -51,15 +63,15 @@
         },
         "brand": {
           "$value": "{primitive.color.blue.600}",
-          "$description": "Text with brand color"
+          "$description": "Text with brand color (5.17:1 AA)"
         },
         "link": {
           "$value": "{primitive.color.blue.600}",
-          "$description": "Hyperlink default"
+          "$description": "Hyperlink default (5.17:1 AA)"
         },
         "linkHover": {
           "$value": "{primitive.color.blue.700}",
-          "$description": "Hyperlink hover"
+          "$description": "Hyperlink hover (6.7:1 AA)"
         }
       },
       "border": {
@@ -76,8 +88,12 @@
           "$description": "Emphasized borders"
         },
         "focus": {
-          "$value": "{primitive.color.blue.500}",
+          "$value": "{primitive.color.blue.600}",
           "$description": "Focus ring indicator"
+        },
+        "ring": {
+          "$value": "color-mix(in oklch, {primitive.color.blue.600} 24%, transparent)",
+          "$description": "Soft ambient focus halo"
         },
         "disabled": {
           "$value": "{primitive.color.slate.200}",

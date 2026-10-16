@@ -1,6 +1,7 @@
 {
   "brand": {
     "name": { "$value": "Beta FinTech", "$type": "string" },
+    "isDefault": { "$value": false, "$type": "boolean" },
     "fontFamily": {
       "base": {
         "$value": "'Plus Jakarta Sans', {primitive.fontFamily.sans}",

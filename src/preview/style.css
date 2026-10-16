@@ -248,11 +248,12 @@ code {
   background: var(--ds-color-surface-default);
   border: 1px solid var(--ds-color-border-default);
   border-radius: var(--ds-brand-radius-card);
-  padding: 1.5rem;
+  padding: var(--ds-card-padding, 1.5rem);
   box-shadow: var(--ds-elevation-card);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: var(--ds-density-stackGap, 1.25rem);
+  transition: padding 0.15s ease, gap 0.15s ease;
 }
 
 .showcase-card h3 {

@@ -7,6 +7,10 @@
             "$value": "{primitive.fontSize.4xl}",
             "$type": "dimension"
           },
+          "fluidFontSize": {
+            "$value": "{primitive.fontSize.fluid-4xl}",
+            "$type": "dimension"
+          },
           "lineHeight": {
             "$value": "{primitive.lineHeight.tight}",
             "$type": "number"
@@ -23,6 +27,10 @@
         "2": {
           "fontSize": {
             "$value": "{primitive.fontSize.3xl}",
+            "$type": "dimension"
+          },
+          "fluidFontSize": {
+            "$value": "{primitive.fontSize.fluid-3xl}",
             "$type": "dimension"
           },
           "lineHeight": {
@@ -43,6 +51,10 @@
             "$value": "{primitive.fontSize.2xl}",
             "$type": "dimension"
           },
+          "fluidFontSize": {
+            "$value": "{primitive.fontSize.fluid-2xl}",
+            "$type": "dimension"
+          },
           "lineHeight": {
             "$value": "{primitive.lineHeight.snug}",
             "$type": "number"
@@ -59,6 +71,10 @@
         "4": {
           "fontSize": {
             "$value": "{primitive.fontSize.xl}",
+            "$type": "dimension"
+          },
+          "fluidFontSize": {
+            "$value": "{primitive.fontSize.fluid-xl}",
             "$type": "dimension"
           },
           "lineHeight": {
@@ -145,6 +161,63 @@
         "lineHeight": {
           "$value": "{primitive.lineHeight.normal}",
           "$type": "number"
+        }
+      },
+      "composite": {
+        "$type": "typography",
+        "heading1": {
+          "$value": {
+            "fontWeight": "{primitive.fontWeight.bold}",
+            "fontSize": "{primitive.fontSize.fluid-4xl}",
+            "lineHeight": "{primitive.lineHeight.tight}",
+            "fontFamily": "{brand.fontFamily.base}"
+          },
+          "$description": "W3C DTCG composite typography token for H1"
+        },
+        "heading2": {
+          "$value": {
+            "fontWeight": "{primitive.fontWeight.bold}",
+            "fontSize": "{primitive.fontSize.fluid-3xl}",
+            "lineHeight": "{primitive.lineHeight.tight}",
+            "fontFamily": "{brand.fontFamily.base}"
+          },
+          "$description": "W3C DTCG composite typography token for H2"
+        },
+        "heading3": {
+          "$value": {
+            "fontWeight": "{primitive.fontWeight.semibold}",
+            "fontSize": "{primitive.fontSize.fluid-2xl}",
+            "lineHeight": "{primitive.lineHeight.snug}",
+            "fontFamily": "{brand.fontFamily.base}"
+          },
+          "$description": "W3C DTCG composite typography token for H3"
+        },
+        "bodyLarge": {
+          "$value": {
+            "fontWeight": "{primitive.fontWeight.regular}",
+            "fontSize": "{primitive.fontSize.lg}",
+            "lineHeight": "{primitive.lineHeight.normal}",
+            "fontFamily": "{brand.fontFamily.base}"
+          },
+          "$description": "W3C DTCG composite typography token for large body prose"
+        },
+        "bodyMedium": {
+          "$value": {
+            "fontWeight": "{primitive.fontWeight.regular}",
+            "fontSize": "{primitive.fontSize.base}",
+            "lineHeight": "{primitive.lineHeight.normal}",
+            "fontFamily": "{brand.fontFamily.base}"
+          },
+          "$description": "W3C DTCG composite typography token for standard body copy"
+        },
+        "code": {
+          "$value": {
+            "fontWeight": "{primitive.fontWeight.regular}",
+            "fontSize": "{primitive.fontSize.sm}",
+            "lineHeight": "{primitive.lineHeight.normal}",
+            "fontFamily": "{primitive.fontFamily.mono}"
+          },
+          "$description": "W3C DTCG composite typography token for inline/block code"
         }
       }
     }

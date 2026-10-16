@@ -142,42 +142,39 @@ ds-template/
 pnpm install
 ```
 
-### 2. Validate Token References
-Runs static analysis across all brand and theme combinations to ensure every `{...}` reference resolves cleanly:
+### 2. Validate Token References, Cycles & WCAG 2.1 AA Contrast
+Runs static analysis across all auto-discovered brand and theme permutations to ensure every `{...}` reference resolves cleanly, no circular loops exist, all `$type` declarations are valid, and WCAG 2.1 AA contrast ratios (`>= 4.5:1`) pass:
 ```bash
 pnpm validate
 ```
 
-### 3. Build Token Outputs
-Compiles CSS, SCSS, TypeScript, and Figma sync files:
+### 3. Build Token Outputs & Run Tests
+Compiles CSS (`@layer`, `color-scheme`, OKLCH `color-mix()`), Tailwind v4 `@theme`, SCSS, ESM JavaScript + TypeScript `.d.ts`, and Figma sync files:
 ```bash
 pnpm build
+pnpm test
 ```
 
-### 4. Launch Interactive TokenOps Studio & Workbench
-Starts the local Next.js development server hosting the **TokenOps Studio** audit workbench, WCAG contrast calculator, token explorer, and multi-brand sandbox:
+### 4. Launch Interactive Showcase
+Starts the local Vite development server with live Brand, Theme, and Density (`compact` | `default` | `spacious`) switchers:
 ```bash
 pnpm dev
 ```
-*(To launch the lightweight Vite token preview sandbox instead, run `pnpm run dev:tokens`)*
 
 ---
 
 ## 🎨 How Multi-Branding Works in Code
 
 ### CSS Custom Property Scoping
-The build engine compiles tokens into cascading selectors based on `data-brand` and `data-theme` attributes:
+The build engine compiles tokens into cascading `@layer` selectors based on `data-brand`, `data-theme`, and `data-density` attributes:
 
 ```css
-/* Default fallback */
-:root {
-  --ds-button-radius: 6px;
-  --ds-button-variant-primary-bg-default: #2563eb;
-}
+@layer ds.primitives, ds.themes, ds.density;
 
 /* Brand Alpha (Light) */
 [data-brand="brand-alpha"][data-theme="light"],
 [data-brand="brand-alpha"] {
+  color-scheme: light;
   --ds-button-radius: 6px;
   --ds-button-variant-primary-bg-default: #2563eb;
 }
@@ -185,12 +182,14 @@ The build engine compiles tokens into cascading selectors based on `data-brand` 
 /* Brand Beta (Light) */
 [data-brand="brand-beta"][data-theme="light"],
 [data-brand="brand-beta"] {
+  color-scheme: light;
   --ds-button-radius: 12px;                          /* Rounded 12px! */
-  --ds-button-variant-primary-bg-default: #059669;   /* Emerald Green! */
+  --ds-button-variant-primary-bg-default: #047857;   /* Accessible Emerald! */
 }
 
 /* Brand Beta (Dark) */
 [data-brand="brand-beta"][data-theme="dark"] {
+  color-scheme: dark;
   --ds-color-surface-canvas: #0a120e;                /* Deep Forest dark! */
   --ds-button-variant-primary-bg-default: #10b981;
 }
@@ -200,8 +199,8 @@ The build engine compiles tokens into cascading selectors based on `data-brand` 
 
 #### Global Switch:
 ```html
-<html data-brand="brand-alpha" data-theme="light">
-  <!-- Everything uses Alpha Tech Light -->
+<html data-brand="brand-alpha" data-theme="light" data-density="default">
+  <!-- Everything uses Alpha Tech Light with Default Density -->
 </html>
 ```
 
@@ -213,9 +212,9 @@ The build engine compiles tokens into cascading selectors based on `data-brand` 
     <header>...</header>
 
     <!-- Embedded partner widget or sub-brand container -->
-    <aside data-brand="brand-beta">
+    <aside data-brand="brand-beta" data-density="compact">
       <!-- Buttons, inputs, and cards inside this container 
-           automatically adopt Beta FinTech styles (Emerald, 12px radii)! -->
+           automatically adopt Beta FinTech styles (Emerald, 12px radii) & Compact density! -->
       <button class="ds-button ds-button--primary">Beta Button</button>
     </aside>
   </body>
@@ -228,7 +227,7 @@ The build engine compiles tokens into cascading selectors based on `data-brand` 
 
 ### 1. In Vanilla CSS / HTML
 ```html
-<!-- Single import for all brands and themes -->
+<!-- Single import for all brands, themes, and density scopes -->
 <link rel="stylesheet" href="@ds-template/tokens/css" />
 
 <style>
@@ -237,19 +236,21 @@ The build engine compiles tokens into cascading selectors based on `data-brand` 
     border: 1px solid var(--ds-color-border-default);
     border-radius: var(--ds-card-radius);
     box-shadow: var(--ds-elevation-card);
-    padding: var(--ds-spacing-component-lg);
+    padding: var(--ds-card-padding);
+    font: var(--ds-typography-composite-bodyMedium);
   }
 </style>
 ```
 
 ### 2. In TypeScript / JavaScript
-Enjoy compile-time autocomplete and typo prevention with typed variable constants:
+Enjoy compile-time autocomplete and typo prevention with typed variable constants and runtime helpers:
 
 ```typescript
-import { TOKENS, setTheme } from '@ds-template/tokens';
+import { TOKENS, setTheme, setDensity } from '@ds-template/tokens';
 
-// Switch brand and theme dynamically
+// Switch brand, theme, and density dynamically
 setTheme('brand-beta', 'dark');
+setDensity('compact');
 
 // Safe CSS variable reference in style objects (React / Vue / Emotion)
 const cardStyle = {
@@ -265,43 +266,23 @@ const cardStyle = {
 @use '@ds-template/tokens/scss' as ds;
 
 .my-box {
-  background-color: ds.$color-surface-default;
-  border-radius: ds.$brand-radius-card;
+  background-color: ds.$ds-color-surface-default;
+  border-radius: ds.$ds-brand-radius-card;
 }
 ```
 
-### 4. In Tailwind CSS
-Add semantic tokens into your `tailwind.config.js` or Tailwind v4 `@theme` block:
+### 4. In Tailwind CSS v4 (Zero-Config `@theme`)
+Import the pre-built Tailwind v4 `@theme inline` bridge directly in your main CSS file:
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        surface: {
-          canvas: 'var(--ds-color-surface-canvas)',
-          DEFAULT: 'var(--ds-color-surface-default)',
-          subtle: 'var(--ds-color-surface-subtle)',
-        },
-        text: {
-          primary: 'var(--ds-color-text-primary)',
-          secondary: 'var(--ds-color-text-secondary)',
-          brand: 'var(--ds-color-text-brand)',
-        },
-      },
-      borderRadius: {
-        card: 'var(--ds-brand-radius-card)',
-        button: 'var(--ds-brand-radius-button)',
-      },
-    },
-  },
-};
+```css
+@import "tailwindcss";
+@import "@ds-template/tokens/tailwind";
 ```
+This automatically maps utilities like `bg-canvas`, `bg-surface`, `text-content-primary`, `border-stroke-default`, `rounded-card`, and `shadow-card` to the active brand and theme!
 
 ---
 
-## 🛠️ How to Add a New Brand in 3 Minutes
+## 🛠️ How to Add a New Brand (Zero Script Edits — Auto-Discovered!)
 
 1. **Create the brand directory**:
    ```bash
@@ -315,14 +296,16 @@ module.exports = {
      {
        "brand": {
          "name": { "$value": "Gamma Media", "$type": "string" },
+         "isDefault": { "$value": false, "$type": "boolean" },
          "fontFamily": {
            "base": { "$value": "'Poppins', {primitive.fontFamily.sans}", "$type": "fontFamily" }
          },
          "radius": {
-           "default": { "$value": "{primitive.radius.sm}", "$type": "dimension" },
-           "card": { "$value": "{primitive.radius.md}", "$type": "dimension" },
-           "button": { "$value": "{primitive.radius.sm}", "$type": "dimension" },
-           "input": { "$value": "{primitive.radius.sm}", "$type": "dimension" }
+           "$type": "dimension",
+           "default": { "$value": "{primitive.radius.sm}" },
+           "card": { "$value": "{primitive.radius.md}" },
+           "button": { "$value": "{primitive.radius.sm}" },
+           "input": { "$value": "{primitive.radius.sm}" }
          }
        }
      }
@@ -332,35 +315,28 @@ module.exports = {
    - `src/tokens/brands/brand-gamma/dark.tokens.json`:
      Define semantic color mappings for dark mode.
 
-3. **Register the brand in `scripts/build-tokens.mjs` and `scripts/validate-tokens.mjs`**:
-   ```javascript
-   const BRANDS = [
-     { id: 'brand-alpha', name: 'Alpha Tech', isDefault: true },
-     { id: 'brand-beta', name: 'Beta FinTech', isDefault: false },
-     { id: 'brand-gamma', name: 'Gamma Media', isDefault: false }, // <-- Added!
-   ];
-   ```
-
-4. **Run validate & build**:
+3. **Run validate & build**:
    ```bash
    pnpm validate && pnpm build
    ```
-   Style Dictionary automatically generates `brand-gamma-light.css`, `brand-gamma-dark.css`, adds it to `tokens.css`, and exports it for Figma and TypeScript!
+   Both `scripts/validate-tokens.mjs` and `scripts/build-tokens.mjs` **auto-discover** `brand-gamma` from the file system, validate its WCAG contrast and references, generate `brand-gamma-light.css` and `brand-gamma-dark.css`, and export it to TypeScript and Figma!
 
 ---
 
-## 🎨 Figma Synchronization
+## 🎨 Two-Way Figma & Tokens Studio Synchronization
 
-This repository generates two industry-standard sync formats on every build:
+This repository provides a complete two-way workflow for **Tokens Studio for Figma** and the **Figma Variables REST API**:
 
-1. **Tokens Studio for Figma (`dist/figma/tokens-studio.json`)**:
-   - Organized into multi-set layers: `primitives`, `brand/brand-alpha`, `brand/brand-beta`, `theme/light`, `theme/dark`, and `components`.
-   - Supports automated two-way sync via GitHub Sync in the Tokens Studio plugin.
+1. **Tokens Studio Multi-Set Export (`dist/figma/tokens-studio.json`)**:
+   - Losslessly deep-merges all primitive, semantic, per-brand (`brand/brand-alpha`, `brand/brand-beta`), per-theme (`theme/brand-alpha/light`, `theme/brand-beta/dark`, etc.), and component sets alongside `$themes` and `$metadata.tokenSetOrder`.
+   - **Two-Way Sync Back to Code**: To hydrate modular `src/tokens/**/*.tokens.json` files from an updated `tokens-studio.json` exported from Figma, run:
+     ```bash
+     pnpm run sync:tokens-studio path/to/tokens-studio.json
+     ```
 
-2. **Figma Variables API (`dist/figma/figma-variables.json`)**:
-   - Formatted for direct automated import via the Figma REST API `POST /v1/files/:file_key/variables`.
-   - Collections: `Primitives`, `Semantic`, and `Components`.
-   - Modes: `Alpha Tech (Light)`, `Alpha Tech (Dark)`, `Beta FinTech (Light)`, `Beta FinTech (Dark)`.
+2. **Figma Variables REST API (`dist/figma/figma-variables.json`)**:
+   - Formatted for direct automated import via `POST /v1/files/:file_key/variables`.
+   - Includes `collections` (`Primitives`, `Semantic`, `Components`), `modes`, `variables`, and `variableModeValues` across all brand/theme permutations.
 
 ---
 

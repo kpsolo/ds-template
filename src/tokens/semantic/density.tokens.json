@@ -1,0 +1,20 @@
+{
+  "semantic": {
+    "density": {
+      "$type": "dimension",
+      "controlHeight": {
+        "sm": { "$value": "32px", "$description": "Small control height" },
+        "md": { "$value": "40px", "$description": "Medium control height" },
+        "lg": { "$value": "48px", "$description": "Large control height" }
+      },
+      "containerPadding": {
+        "$value": "{primitive.spacing.6}",
+        "$description": "Default card/container padding"
+      },
+      "stackGap": {
+        "$value": "{primitive.spacing.4}",
+        "$description": "Default vertical/horizontal rhythm gap"
+      }
+    }
+  }
+}

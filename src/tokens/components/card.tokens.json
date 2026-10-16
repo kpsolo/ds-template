@@ -7,7 +7,7 @@
         "$type": "dimension"
       },
       "padding": {
-        "$value": "{semantic.spacing.component.lg}",
+        "$value": "{semantic.density.containerPadding}",
         "$type": "dimension"
       },
       "shadow": { "$value": "{semantic.elevation.card}", "$type": "shadow" },

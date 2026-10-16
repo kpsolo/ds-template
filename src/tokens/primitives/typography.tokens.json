@@ -32,7 +32,23 @@
       "2xl": { "$value": "1.5rem", "$description": "24px" },
       "3xl": { "$value": "1.875rem", "$description": "30px" },
       "4xl": { "$value": "2.25rem", "$description": "36px" },
-      "5xl": { "$value": "3rem", "$description": "48px" }
+      "5xl": { "$value": "3rem", "$description": "48px" },
+      "fluid-xl": {
+        "$value": "clamp(1.125rem, 1.05rem + 0.375vw, 1.375rem)",
+        "$description": "Fluid 18px -> 22px"
+      },
+      "fluid-2xl": {
+        "$value": "clamp(1.35rem, 1.2rem + 0.75vw, 1.75rem)",
+        "$description": "Fluid 21.6px -> 28px"
+      },
+      "fluid-3xl": {
+        "$value": "clamp(1.65rem, 1.4rem + 1.25vw, 2.25rem)",
+        "$description": "Fluid 26.4px -> 36px"
+      },
+      "fluid-4xl": {
+        "$value": "clamp(2rem, 1.65rem + 1.75vw, 3rem)",
+        "$description": "Fluid 32px -> 48px"
+      }
     },
     "lineHeight": {
       "$type": "number",

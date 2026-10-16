@@ -11,7 +11,10 @@
         "$type": "fontFamily"
       },
       "fontSize": { "$value": "{primitive.fontSize.sm}", "$type": "dimension" },
-      "height": { "$value": "40px", "$type": "dimension" },
+      "height": {
+        "$value": "{semantic.density.controlHeight.md}",
+        "$type": "dimension"
+      },
       "paddingX": { "$value": "{primitive.spacing.3}", "$type": "dimension" },
       "transition": {
         "$value": "border-color {primitive.motion.duration.fast} {primitive.motion.easing.easeOut}, box-shadow {primitive.motion.duration.fast} {primitive.motion.easing.easeOut}",
@@ -36,7 +39,7 @@
         },
         "text": { "$value": "{semantic.color.text.primary}", "$type": "color" },
         "placeholder": {
-          "$value": "{semantic.color.text.tertiary}",
+          "$value": "{semantic.color.text.placeholder}",
           "$type": "color"
         },
         "disabled": {

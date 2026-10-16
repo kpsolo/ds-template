@@ -20,7 +20,10 @@
       },
       "size": {
         "sm": {
-          "height": { "$value": "32px", "$type": "dimension" },
+          "height": {
+            "$value": "{semantic.density.controlHeight.sm}",
+            "$type": "dimension"
+          },
           "paddingX": {
             "$value": "{primitive.spacing.3}",
             "$type": "dimension"
@@ -31,7 +34,10 @@
           }
         },
         "md": {
-          "height": { "$value": "40px", "$type": "dimension" },
+          "height": {
+            "$value": "{semantic.density.controlHeight.md}",
+            "$type": "dimension"
+          },
           "paddingX": {
             "$value": "{primitive.spacing.4}",
             "$type": "dimension"
@@ -42,7 +48,10 @@
           }
         },
         "lg": {
-          "height": { "$value": "48px", "$type": "dimension" },
+          "height": {
+            "$value": "{semantic.density.controlHeight.lg}",
+            "$type": "dimension"
+          },
           "paddingX": {
             "$value": "{primitive.spacing.6}",
             "$type": "dimension"

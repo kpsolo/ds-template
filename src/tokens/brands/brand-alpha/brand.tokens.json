@@ -1,6 +1,7 @@
 {
   "brand": {
     "name": { "$value": "Alpha Tech", "$type": "string" },
+    "isDefault": { "$value": true, "$type": "boolean" },
     "fontFamily": {
       "base": {
         "$value": "'Inter', {primitive.fontFamily.sans}",
